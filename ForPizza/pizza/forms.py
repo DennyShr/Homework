@@ -1,6 +1,15 @@
 from django import forms
+from .models import PizzaName
 
-class Feedback(forms.Form):
-	name = forms.CharField(label='Your name:', max_length=100)
-	feedback = forms.CharField(label='Your feedback:', widget=forms.Textarea, max_length=256)
+class PizzaAddForm(forms.Form):
+	name = forms.CharField(label='Pizza', max_length=30)
+	price = forms.DecimalField(label='Price', max_digits=5, decimal_places=2)
+	weight = forms.IntegerField(label='Weight, grams')
+
+	def create_objects(self):
+		PizzaName.objects.create(
+			name = self.cleaned_data.get('name'),
+			price = self.cleaned_data.get('price'),
+			weight = self.cleaned_data.get('weight')
+			)
 
