@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<header>
+		<h1>List of pizzas</h1>
+		<ul>
+			{% for pizza_name in object_list %}
+				<li>{{ pizza_name.name }}</li>
+				{% endfor %}
+		</ul>
+	</header>
+	<a href="/pizza_order">Please, make your order</a>
+</body>
+</html>
