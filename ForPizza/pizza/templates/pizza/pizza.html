@@ -8,10 +8,10 @@
 		<h1>List of pizzas</h1>
 		<ul>
 			{% for pizza_name in object_list %}
-				<li>{{ pizza_name.name }}</li>
+				<li><a href="/pizza/pizzaadd/{{pizza_name.id}}/edit/">{{ pizza_name.name }}</li>
 				{% endfor %}
 		</ul>
 	</header>
-	<a href="/pizza/pizzaadd">Please, make your order</a>
+	<a href="/pizza/pizzaadd">Add new pizza</a>
 </body>
 </html>
