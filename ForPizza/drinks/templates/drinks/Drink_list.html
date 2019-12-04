@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>List of drinks</h1>
+<ul>
+	{% for drink in object_list %}
+	<li>{{ drink.name|capfirst }}: {{ drink.volume|default_if_none:"Keeping in secret by Gods" }}ml</li>
+	{% endfor %}
+</ul>
+{% endblock content %}
