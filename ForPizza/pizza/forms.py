@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from .models import PizzaName
 
 class PizzaAddForm(forms.Form):
@@ -13,3 +14,7 @@ class PizzaAddForm(forms.Form):
 			weight = self.cleaned_data.get('weight')
 			)
 
+class PizzaAddModelForm(ModelForm):
+	class Meta:
+		model = PizzaName
+		fields = ['name', 'price', 'weight']
