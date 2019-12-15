@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+	{% for dishes in object_list %}
+	<li>{{ dishes.dish.name }} count: {{ dishes.count }}
+		<a href="/order/add/order{{order}}_{{dishes.dish.id}}/change_count/">edit count</a></li>
+	{% endfor %}
+</ul>
+<p>Full price: {{ full_price.dish__price__sum }}</p>
+<a href="/order/edit_order_{{order}}/">Edit your order</a>
+{% endblock %}
