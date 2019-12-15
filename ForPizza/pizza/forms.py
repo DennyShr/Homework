@@ -19,3 +19,20 @@ class PizzaAddModelForm(ModelForm):
 		model = PizzaName
 		fields = ['name', 'price', 'weight']
 
+class ChangePriceForm(forms.Form):
+	newprice = forms.DecimalField(label='Price', max_digits=5, decimal_places=2)
+
+	def get_newprice(self):
+		return self.cleaned_data.get('newprice') 
+
+class FilterForm(forms.Form):
+	UPPER_PRICES = 'UP'
+	LOWER_PRICES = 'LP'
+	PRICE_FILTER = [
+	(UPPER_PRICES, 'Price, higher first'),
+	(LOWER_PRICES, 'Price, lower first'),
+	]
+	filter =  forms.ChoiceField(choices=PRICE_FILTER)
+
+	def get_filter(self):
+		return self.cleaned_data.get('filter')
