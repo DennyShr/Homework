@@ -30,7 +30,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pizza.apps.PizzaConfig',
-    'drinks.apps.DrinksConfig'
+    'drinks.apps.DrinksConfig',
+    'dishes.apps.DishesConfig',
+    'order.apps.OrderConfig',
 ]
 
 MIDDLEWARE = [

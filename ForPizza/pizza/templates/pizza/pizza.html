@@ -7,9 +7,10 @@
 	<li><a href="/pizza/pizzaadd/{{pizza_name.id}}/edit/">{{ pizza_name.name|upper }}
 		{% if pizza_name.price >= 100 %}
 			: free delivery
-		{% endif %}
+		{% endif %}  
+		<a href="/pizza/pizzaadd/{{pizza_name.id}}/editprice/">(edit price)</a>
 	</li>
 	{% endfor %}
 </ul>
-<a href="/pizza/pizzaadd">Add new pizza</a>
+<a href="/pizza/pizzas/filter/">Filter</a>
 {% endblock content %}
