@@ -9,6 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pizza/', include('pizza.urls')),
     path('drinks/', include('drinks.urls')),
+    path('dishes/', include('dishes.urls')),
+    path('order/', include('order.urls')),
     path('', TemplateView.as_view(template_name="index.html")),
 ]
 
