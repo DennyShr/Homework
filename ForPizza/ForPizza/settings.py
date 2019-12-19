@@ -67,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
+                'pizza.context_processors.pizza_discount',
+                'ForPizza.context_processors.order',
             ],
         },
     },

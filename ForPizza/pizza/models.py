@@ -8,6 +8,14 @@ class PizzaName(models.Model):
 	def __str__ (self):
 		return 'Pizza: {}'.format(self.name)
 
+class PizzaDiscount(models.Model):
+	pizza = models.ForeignKey(PizzaName, on_delete=models.CASCADE)
+	discount_price = models.DecimalField('Discount price', max_digits=5, decimal_places=2)
+	status = models.BooleanField('Status')
+
+	def __str__(self):
+		return 'With discount: {}'.format(self.name)
+
 class Ingredient(models.Model):
 	name = models.CharField('Ingredient', max_length=30)
 	price = models.DecimalField('Price', max_digits=5, decimal_places=2, default=0)
